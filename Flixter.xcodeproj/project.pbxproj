@@ -17,6 +17,7 @@
 		72DD27DA285A497F008371FD /* FlixterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD27D9285A497F008371FD /* FlixterUITests.m */; };
 		72DD27DC285A497F008371FD /* FlixterUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD27DB285A497F008371FD /* FlixterUITestsLaunchTests.m */; };
 		72DD27F1285AA9DF008371FD /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD27F0285AA9DF008371FD /* MovieViewController.m */; };
+		72DD2835285CEB96008371FD /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD2834285CEB96008371FD /* MovieCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		72DD27DB285A497F008371FD /* FlixterUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlixterUITestsLaunchTests.m; sourceTree = "<group>"; };
 		72DD27EF285AA9DF008371FD /* MovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		72DD27F0285AA9DF008371FD /* MovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		72DD2833285CEB96008371FD /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		72DD2834285CEB96008371FD /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				72DD27C1285A497F008371FD /* LaunchScreen.storyboard */,
 				72DD27C4285A497F008371FD /* Info.plist */,
 				72DD27C5285A497F008371FD /* main.m */,
+				72DD2833285CEB96008371FD /* MovieCell.h */,
+				72DD2834285CEB96008371FD /* MovieCell.m */,
 			);
 			path = Flixter;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72DD27B5285A497E008371FD /* AppDelegate.m in Sources */,
+				72DD2835285CEB96008371FD /* MovieCell.m in Sources */,
 				72DD27C6285A497F008371FD /* main.m in Sources */,
 				72DD27B8285A497E008371FD /* SceneDelegate.m in Sources */,
 				72DD27F1285AA9DF008371FD /* MovieViewController.m in Sources */,
