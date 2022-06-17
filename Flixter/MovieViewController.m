@@ -30,6 +30,7 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
                NSArray *resultsArray = dataDictionary[@"results"];
+               self.resultsArray = resultsArray;
                [self.tableView reloadData];
                // TODO: Store the movies in a property to use elsewhere
                // TODO: Reload your table view data
