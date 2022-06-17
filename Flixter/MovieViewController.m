@@ -8,6 +8,7 @@
 #import "MovieViewController.h"
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 @interface MovieViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -83,8 +84,10 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *senderIndex = [self.tableView indexPathForCell:sender];
+    NSDictionary *movie = self.resultsArray[senderIndex.row];
+    DetailsViewController *detailVC = [segue destinationViewController];
+    detailVC.movie = movie;
 }
 
 
