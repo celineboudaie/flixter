@@ -6,8 +6,11 @@
 //
 
 #import "MovieCollectionViewController.h"
+#import "PosterCollectionViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
-@interface MovieCollectionViewController ()
+
+@interface MovieCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property(weak, nonatomic)NSArray *resultsArray;
@@ -17,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+ 
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=7f1849e764fef1875bf464a4720a3799"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
@@ -54,5 +61,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    PosterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PosterCollectionViewCell" forIndexPath:indexPath];
+    
+    NSDictionary *movie = self.resultsArray[indexPath.item];
+    
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    cell.PosterImageView.image = nil;
+    [cell.PosterImageView setImageWithURL:posterURL];
+
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.resultsArray count];
+}
 
 @end

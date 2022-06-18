@@ -1,5 +1,5 @@
 //
-//  MovieViewController.m
+//  MovieViewController.mtvibnetjiitnfnbkhltinectbnhjliuc
 //  Flixter
 //
 //  Created by Celine Boudaie on 6/15/22.
@@ -68,6 +68,10 @@
     
     
 }
+
+// MARK: UITableViewDataSource methods
+
+//1
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
    
@@ -84,6 +88,8 @@
 
     return  cell;
 }
+
+//2
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.resultsArray.count;
 }
