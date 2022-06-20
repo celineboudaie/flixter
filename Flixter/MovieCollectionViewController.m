@@ -43,6 +43,7 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
                NSArray *resultsArray = dataDictionary[@"results"];
+               NSLog(@"%@", resultsArray);
                self.resultsArray = resultsArray;
                [self.collectionView reloadData];
              
@@ -61,24 +62,26 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PosterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PosterCollectionViewCell" forIndexPath:indexPath];
     
-    NSDictionary *movie = self.resultsArray[indexPath.item];
+    NSDictionary *movie = self.resultsArray[indexPath.row];
     
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500/";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    cell.PosterImageView.image = nil;
+    
+    NSLog(@"%@", posterURL);
+//    cell.PosterImageView.image = nil;
     [cell.PosterImageView setImageWithURL:posterURL];
 
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.resultsArray count];
+    return self.resultsArray.count;
 }
 
 @end
