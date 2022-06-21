@@ -51,7 +51,7 @@
                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                        //button click event
                                    }];
-               
+                
                [alert addAction:ok];
                [self presentViewController:alert animated:YES completion:nil];
            }
