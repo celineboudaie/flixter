@@ -13,7 +13,7 @@
 @interface MovieCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property(weak, nonatomic)NSArray *resultsArray;
+@property (strong, nonatomic)NSArray *resultsArray;
 @end
 
 @implementation MovieCollectionViewController
@@ -43,7 +43,7 @@
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
                NSArray *resultsArray = dataDictionary[@"results"];
-               NSLog(@"%@", resultsArray);
+               //NSLog(@"%@", resultsArray);
                self.resultsArray = resultsArray;
                [self.collectionView reloadData];
              

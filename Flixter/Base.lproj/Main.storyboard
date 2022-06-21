@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="-358" y="-956"/>
         </scene>
-        <!--Item-->
+        <!--Movies-->
         <scene sceneID="eFU-dd-DCc">
             <objects>
                 <viewController id="KNx-KZ-KUh" customClass="MovieCollectionViewController" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="80" width="414" height="733"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kQc-dF-tEg">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kQc-dF-tEg">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -136,7 +136,7 @@
                         <viewLayoutGuide key="safeArea" id="nJ5-nK-Hyr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dWx-Ia-jKf"/>
+                    <tabBarItem key="tabBarItem" title="Movies" id="dWx-Ia-jKf"/>
                     <connections>
                         <outlet property="collectionView" destination="JcP-Uw-jbc" id="EBv-0r-bPe"/>
                     </connections>
@@ -194,11 +194,11 @@
             </objects>
             <point key="canvasLocation" x="2071" y="117"/>
         </scene>
-        <!--Item-->
+        <!--Now Playing-->
         <scene sceneID="abM-lX-q5H">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tEn-Dr-0DG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Pqb-eb-T2O"/>
+                    <tabBarItem key="tabBarItem" title="Now Playing" id="Pqb-eb-T2O"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TJn-8H-Kj2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

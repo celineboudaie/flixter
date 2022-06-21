@@ -23,14 +23,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchMovies];
+    // Do any additional setup after loading the view.
+}
+
+-(void)fetchMovies {
+    
+    [self.activityIndicator startAnimating];
+
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    [self fetchMovies];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
-    [self.activityIndicator startAnimating];
+    //[self.tableView insertSubview:self.refreshControl atIndex:0];
+    self.tableView.refreshControl = self.refreshControl;
 
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=7f1849e764fef1875bf464a4720a3799"];
@@ -57,15 +64,12 @@
              
            }
         [self.refreshControl endRefreshing];
+       
+
        }];
-    [self.activityIndicator stopAnimating];
 
     [task resume];
-    // Do any additional setup after loading the view.
-}
-
--(void)fetchMovies {
-    
+    [self.activityIndicator stopAnimating];
     
 }
 
